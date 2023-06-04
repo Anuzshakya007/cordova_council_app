@@ -17,9 +17,9 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
-    <head>
-        <meta charset="utf-8">
+<html lang="en">
+    <!-- <head>
+        <meta charset="utf-8"> -->
         <!--
         Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
             https://cordova.apache.org/docs/en/latest/
@@ -28,23 +28,273 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="./css/jqm.css" />
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.validate.js"></script>
+        <script src="./js/jquery-1.7.1.js" ></script>
+        <script src="./js/jquery.mobile-1.1.1.js"></script>
+        <script src="./js/jqm.js"></script>
+        <script src="./js/index.js"></script>
+        <link rel="stylesheet" href="./css/index.css"/>
         <title>Hello World</title>
+    </head> -->
+    <head>
+      <meta charset="utf-8" />
+      <meta name="description" content="COIT20269-Assignment1" />
+      <meta name="keywords" content="HTML, CSS, JavaScript" />
+      <meta name="author" content="Anuj 12189078" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-tap-highlight" contentcordova run brpwser="no" />
+      <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+      <meta name="color-scheme" content="light dark" /><link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+      <link rel="stylesheet" href="css/jqm.css" />
+      <script src="js/jquery.js"></script>
+      <script src="js/jquery.validate.js"></script>
+      <script src="js/jquery-1.7.1.js" ></script>
+      <script src="js/jquery.mobile-1.1.1.js"></script>
+      <script src="js/jqm.js"></script>
+      <script src="js/index.js"></script>
+      <link rel="stylesheet" href="css/index.css"/>
+    
+      <style>
+      .panel-content {
+        padding: 0em;
+      }
+      </style>
+    
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+        <!--  START SPA PAGE --------------------------------------------- -->
+        <div data-role="page" id="home">
+     
+         <div data-role="header" data-position="fixed" data-theme="b" >
+         <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">Menu</a>
+         <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 1</a> </h1>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         </div>
+     
+         <div data-role="content" data-theme="a" class="content">
+           <h1>Welcome</h1>
+           <h2> Select an item from the menu</h2>
+         </div>
+         
+         <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+           <h1>Anuj &copy; 2023</h1>
+         </div>
+       </div>
+       <!--  END SPA PAGE --------------------------------------------- -->
+     
+       <!--  START SPA PAGE --------------------------------------------- -->
+       <div data-role="page" id="about">
+          
+         <div data-role="header" data-position="fixed" data-theme="b" >
+           <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">Menu</a>
+           <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 1</a> </h1>
+           <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+           </div>
+     
+           <div data-role="content" data-theme="a" class="aboutContent">
+             <h1>About Me</h1>
+             <h2>Anuj Shakya</h2>
+             <img class="content pop-photo" src="img/anuj.png" alt="anuj"/>
+             <button  data-inline ="true"><a href="#popupDetail" data-rel="popup" data-position-to="window" data-transition="fade">Show Detail</a></button>
+             <div class="popup" data-role="popup" id="popupDetail" data-overlay-theme="b" data-theme="b" data-corners="false">
+               <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+               <img class="pop-photo" src="img/anuj.png" alt="author">
+               <h1>Anuj Shakya</h1>
+               <p>Currently studying Masters in Information technology major in Network Security. Looking to leverage my knowledge and experience into role as Cyber Security Analyst.</p>
+             </div>
+           </div>
+     
+         <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+           <h1>Anuj &copy; 2023</h1>
+         </div>
+       </div>
+       <!--  END SPA PAGE --------------------------------------------- -->
+      
+       
+     <!--  START SPA PAGE --------------------------------------------- -->
+     <div data-role="page" id="form">
+     
+       <div data-role="header" data-position="fixed" data-theme="b" >
+         <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">Menu</a>
+         <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 1</a> </h1>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         </div>
+      
+       <div data-role="content" data-theme="a" >
+           <h1>Census</h1>
+         <form action="javascript:processValidForm(this)" name="myForm" id="myForm" >
+           <div class="ui-field-contain">
+             <label for="firstname">firstname</label>
+             <input type="text" name="firstname" id="firstname" placeholder="firstname" value="">
+           </div>
+           <div class="ui-field-contain">
+             <label for="lastname">lastname</label>
+             <input type="text" name="lastname" id="lastname" placeholder="lastname" value="">
+           </div>
+           <div class="ui-field-contain">
+             <label for="state">State</label>
+             <select name="state" id="state">
+               <option value="">Choose one*</option>
+               <option value="NSW">NSW</option>
+               <option value="VIC">VIC</option>
+               <option value="TAS">TAS</option>
+               <option value="WA">WA</option>
+               <option value="SA">SA</option>
+               <option value="NT">NT</option>
+               <option value="QLD">QLD</option>
+             </select>
+           </div>
+           <div class="ui-field-contain">
+             <label for="email">email</label>
+             <input type="email" name="email" id="email" placeholder="Email" value="">
+           </div>
+           <div class="ui-field-contain">
+             <label for="age">Age</label>
+             <input name="age" id="age" placeholder="Age" value="">
+           </div>
+           <button type="submit">Submit</button>
+           <button type="reset">Clear</button>
+     
+         </form>
+           </div>
+     
+           <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+             <h1>Anuj &copy; 2023</h1>
+           </div>
+     
+       </div>
+     <!--  END SPA PAGE --------------------------------------------- -->
+     
+      <!--  START SPA PAGE --------------------------------------------- -->
+      <div data-role="page" id="form-display">
+          
+       <div data-role="header" data-position="fixed" data-theme="b" >
+         <a href="#"  class="menu ui-btn ui-icon-bars">Menu</a> 
+         <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 1</a> </h1>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         </div>
+     
+         <div data-role="content" data-theme="a" class="content">
+           <h1>CENSUS DATA</h1>
+           <br>
+           <div id="listofItems"></div>
+           <br><br>
+         </div>
+     
+       <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+         <h1>Anuj &copy; 2023</h1>
+       </div>
+     </div>
+     <!--  END SPA PAGE --------------------------------------------- -->
+     
+     <!--  START SPA PAGE --------------------------------------------- -->
+     <div data-role="page" id="api-display">
+          
+       <div data-role="header" data-position="fixed" data-theme="b" >
+         <a href="#"  class="menu ui-btn ui-icon-bars">Menu</a> 
+         <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 1</a> </h1>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         </div>
+     
+         <div data-role="content" data-theme="a" class="content">
+           <h1>API DATA</h1>
+           <br>
+     
+           <button id="displayApiData" data-inline ="true">Get API Data</button>
+             <div id="viewFetchedData">
+                 <ul  data-role='listview'>
+                 </ul>
+             </div>
+           <br><br>
+         </div>
+     
+       <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+         <h1>Anuj &copy; 2023</h1>
+       </div>
+     </div>
+     <!--  END SPA PAGE --------------------------------------------- -->
+     
+        <!--  START SPA PAGE --------------------------------------------- -->
+     <div data-role="page" id="calculator">
+     
+       <div data-role="header" data-position="fixed" data-theme="b" >
+         <a href="#"  class="menu ui-btn ui-icon-bars">Menu</a>
+         <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 1</a> </h1>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         </div>
+     
+         <div data-role="content" data-theme="a" class="content">
+           <h1>Calculator</h1>
+           <br>
+     <table class="clc-main">
+           <thead></thead><br>
+     <tbody>
+     <tr><th colspan="4"><input id="display" type="text" placeholder=""></th></tr>
+     <tr>
+         <th><input class="clc" type="button" value="7"></th>
+         <th><input class="clc" type="button" value="8"></th>
+         <th><input class="clc" type="button" value="9"></th>
+         <th><input class="clc" type="button" value="*"></th>
+     
+     </tr>
+     <tr>
+         <th><input class="clc" type="button" value="4"></th>
+         <th><input class="clc" type="button" value="5"></th>
+         <th><input class="clc" type="button" value="6"></th>
+         <th><input class="clc" type="button" value="/"></th>
+     
+     </tr>
+     <tr>
+         <th><input class="clc" type="button" value="1"></th>
+         <th><input class="clc" type="button" value="2"></th>
+         <th><input class="clc" type="button" value="3"></th>
+         <th><input class="clc" type="button" value="-"></th>
+     
+     </tr>
+     <tr>
+         <th><input class="clear" type="button" value="C"></th>
+         <th><input class="clc" type="button" value="0"></th>
+         <th><input class="clc" type="button" value="+"></th>
+         <th><input class="result" type="button" value="="></th>
+     
+     </tr>
+     </tbody>
+     </table>
+           <br><br>
+         </div>
+     
+       <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+         <h1>Anuj &copy; 2023</h1>
+       </div>
+     </div>
+     <!--  END SPA PAGE --------------------------------------------- -->
+     
+     <!-- Menu Panel  -->
+       <div data-role="panel" id="menuPanel" data-position-fixed="true" data-position="left" data-theme="b" data-display="overlay">
+     
+         <div class="panel-content">
+           <a id="homeLink"><img src="img/logo.png"/></a>
+     
+          <ul data-role="listview" id="menuListview" >
+            <li data-icon="grid"> <a href="#about">About Me</a></li>
+            <li data-icon="grid"> <a href="#form">Form </a></li>
+            <li data-icon="grid"> <a href="#form-display">Form Data</a></li>
+            <li data-icon="grid"> <a href="#api-display">Api Data</a></li>
+            <li data-icon="grid"> <a href="#calculator">Student Choice</a></li>
+         </ul>
+     
+         </div><!-- /content wrapper for padding -->
+     
+       </div><!-- /defaultpanel -->
+     <!-- Menu Panel  -->
+     
+      
+     </body>
 </html>

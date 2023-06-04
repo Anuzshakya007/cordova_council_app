@@ -1,67 +1,50 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+/* * { */
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); make transparent link selection, adjust last value opacity 0 to 1.0 */
+/* } */
+
+/* body { */
+    /* -webkit-touch-callout: none;                prevent callout to copy image, etc when tap to hold */
+    /* -webkit-text-size-adjust: none;             prevent webkit from resizing text to fit */
+    /* -webkit-user-select: none;                  prevent copy paste, to allow, change 'none' to 'text' */
+    /* background-color:#E4E4E4;
     background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size:12px;
     height:100vh;
     margin:0px;
-    padding:0px;
+    padding:0px; */
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
-    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    /* padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
     text-transform:uppercase;
     width:100%;
-}
+} */
 
 /* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+/* .app { */
+    /* background:url(../img/logo.png) no-repeat center top; 170px x 200px */
+    /* position:absolute;             position in the center of the screen */
+    /* left:50%; */
+    /* top:50%; */
+    /* height:50px;                   text area height */
+    /* width:225px;                   text area width */
+    /* text-align:center; */
+    /* padding:180px 0px 0px 0px;     image height is 200px (bottom 20px are overlapped with text) */
+    /* margin:-115px 0px 0px -112px;  offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
-}
+/* } */
 
 /* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+/* @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) { */
+    /* .app { */
+        /* background-position:left center; */
+        /* padding:75px 0px 75px 170px;  padding-top + padding-bottom + text area = image height */
+        /* margin:-90px 0px 0px -198px;  offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
-    }
-}
+    /* } */
+/* } */
 
-h1 {
+/* h1 {
     font-size:24px;
     font-weight:normal;
     margin:0px;
@@ -89,9 +72,9 @@ h1 {
 }
 
 #deviceready.ready .event.listening { display: none; }
-#deviceready.ready .event.received { display: block; }
+#deviceready.ready .event.received { display: block; } */
 
-@keyframes fade {
+/* @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
@@ -100,11 +83,207 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
-}
+} */
 
 
-@media screen and (prefers-color-scheme: dark) {
+/* @media screen and (prefers-color-scheme: dark) {
     body {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
     }
-}
+} */
+
+/* My CSS */
+
+@media only screen and (max-width: 680px){
+    #menuPanel {
+       width:60% !important; 
+    }
+    .pop-photo{
+      max-width: 250px;
+    }
+    #about-me,#img{
+      max-height: 250px;
+    }
+  }
+  
+  @media only screen and (min-width: 900px){
+    .ui-content {
+        width: 900px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+    }
+    .pop-photo{
+      max-width: 250px;
+    }
+    #about-me,#img{
+      max-height: 250px;
+    }
+  }
+  
+  
+  body{
+    font-family: "Lato", sans-serif;
+    padding: 0 ; 
+    margin : 0 ; 
+    text-align:center;
+  }
+  
+  
+  #home, #about , #form-display, #api-display, #form, #calculator {
+    background-image: url("../img/logo.png");
+  background-repeat:no-repeat;
+  background-position: center center;
+  }
+  
+  #home p {text-align:justify;} 
+  
+  #container1, #container2 {
+    padding-top: 2em;
+  }
+  
+  
+  /*menu */
+  
+  
+  #menuPanel img {
+  width:40% ; 
+  /*display:block;*/
+  margin: 3em auto 
+  }
+  
+  #menuPanel {
+    opacity: .8;
+  }
+  
+  .project{cursor:pointer}
+  
+  .content { text-align:center; }
+  
+  
+  /*  Sliding Menu  ---------------------*/
+  
+  /* Swipe works with mouse as well but often causes text selection. */
+  #menuPanel * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  #menuPanel{width:40%}
+  
+  /*  End Sliding Menu */
+  
+  /* My CSS*/
+  
+  #about-me, #img {
+    padding: 5px;
+    text-align: center;
+    border: solid 1px #c3c3c3;
+    display: inline-grid;
+    justify-content: center;
+  }
+  
+  #img{
+    cursor: pointer;
+  }
+  
+  #about-me {
+    padding: 50px;
+    display: none;
+    color: black;
+    background-color: #acacac;
+  }
+  
+  .popup{
+    max-width: 500px;
+    padding: 15px;
+  }
+  .pop-photo{
+    max-height: 500px;
+  }
+  .aboutContent{
+    display: inline-grid;
+    justify-content: center;
+  }
+  
+  form {
+    padding: 20px;
+    background: #2c3e50;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+  }
+  
+  
+  form label,
+  form input,
+  form button {
+    border: 0;
+    margin-bottom: 3px;
+    display: block;
+    width: 100%;
+  }
+  
+  
+  form input {
+    height: 25px;
+    line-height: 25px;
+    background: #2c3e50;
+    color: #000;
+    padding: 0 6px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  
+  form button {
+    height: 30px;
+    line-height: 30px;
+    background: #e67e22;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  
+  form .error {
+    color: #ff0000;
+  }
+  .clc-main{
+    padding: 0;
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+  
+  #display{
+    width: 100%;
+    padding: 5px;
+    font-size: 55px;
+    color: black;
+    background-color: #fff;
+    text-align: right;
+    border: 1px solid black;
+    outline: none;
+  }
+  input{
+    background-color: #333;
+    color: #fff;
+    margin-top: 5px;
+    font-size: 25px;
+    width: 95px;
+    height: 95px;
+    border-radius: 40px;
+    border-width: 0;
+  }
+  .finalresult{
+    background-color: #001010;
+  }
+  .clc-row{
+    display: flex;
+    margin-right: 15px;
+  
+  }
+  
