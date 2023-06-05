@@ -129,11 +129,11 @@
   }
   
   
-  #home, #about , #form-display, #api-display, #form, #calculator {
+  /* #home, #about , #form-display, #api-display, #form, #calculator {
     background-image: url("../img/logo.png");
   background-repeat:no-repeat;
   background-position: center center;
-  }
+  } */
   
   #home p {text-align:justify;} 
   
@@ -188,12 +188,12 @@
     cursor: pointer;
   }
   
-  #about-me {
+  /* #about-me {
     padding: 50px;
     display: none;
     color: black;
     background-color: #acacac;
-  }
+  } */
   
   .popup{
     max-width: 500px;
@@ -209,11 +209,10 @@
   
   form {
     padding: 20px;
-    background: #2c3e50;
     color: #fff;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+    box-shadow: 5px 10px 18px #888888;
+    width: 80%;
+    margin: 0 auto;
   }
   
   
@@ -228,7 +227,7 @@
   
   
   form input {
-    height: 25px;
+    height: 15px;
     line-height: 25px;
     background: #2c3e50;
     color: #000;
@@ -239,13 +238,18 @@
   }
   
   
-  form button {
-    height: 30px;
-    line-height: 30px;
-    background: #e67e22;
+  .form-button {
+    height: 40px;
+    width: 30% !important;
+    margin: 0 auto;
     color: #fff;
     margin-top: 10px;
     cursor: pointer;
+  }
+
+  #clearForm, #feedback-button{
+    background-color: #000;
+    color: white;
   }
   
   
@@ -286,4 +290,61 @@
     margin-right: 15px;
   
   }
+
+
+
+/* Popup Open button */ 
+.open-button{
+  font-size: 14px;
+  color: #000 !important;
+  text-decoration: none;
+}
+.popup {
+  position:fixed;
+  top:0px;
+  left:0px;
+  background:rgba(0,0,0,0.75);
+  width:100%;
+  height:100%;
+  display:none;
+  z-index: 1000;
+}
+
+/* Popup inner div */
+.popup-content {
+  width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px;
+  margin-top: 100px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,1);
+  border-radius: 3px;
+  background: #fff;
+  position: relative;
+}
+
+/* Popup close button */
+.close-button {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.8);
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration:none;
+}
+
+.close-button:hover {
+  background: rgba(0,0,0,1);
+}
+
+@media screen and (max-width: 720px) {
+.popup-content {
+  width:90%;
+  } 
+}
   
