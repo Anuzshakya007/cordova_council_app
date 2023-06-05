@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer')
 const { connect, getDB } = require('./db');
 
 const app = express();
