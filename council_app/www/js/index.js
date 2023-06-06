@@ -4,34 +4,20 @@ $(document).ready(function() {
 	$("#menuPanel").panel();
 	$('#menuListview').listview().listview('refresh');	
 
-  $("#img").click(function(){
+  $(".more-about-me").click(function(){
     $("#about-me").slideToggle("slow");
   });
+  
+  $("#showLogin").on("click", function(){
+    console.log("in modal");
+    $(".popup, .popup-content").addClass("active");
+    $("#registration").addClass("blur");
+  });
 
-  $(function() {
-    // Open Popup
-    $('[popup-open]').on('click', function() {
-        var popup_name = $(this).attr('popup-open');
- $('[popup-name="' + popup_name + '"]').fadeIn(300);
-    });
- 
-    // Close Popup
-    $('[popup-close]').on('click', function() {
- var popup_name = $(this).attr('popup-close');
- $('[popup-name="' + popup_name + '"]').fadeOut(300);
- window.location.reload();
-    });
- 
-    // Close Popup When Click Outside
-    $('.popup').on('click', function() {
- var popup_name = $(this).find('[popup-close]').attr('popup-close');
- $('[popup-name="' + popup_name + '"]').fadeOut(300);
- window.location.reload();
-    }).children().click(function() {
- return false;
-    });
- 
-});
+  $(".close, .popup").on("click", function(){
+    $(".popup, .popup-content").removeClass("active");
+    $("#registration").removeClass("blur");
+  });
 
  }
  
@@ -94,4 +80,9 @@ $(document).on("swipeleft swiperight", function( e ) {
 	}
  }
 );
+
+// window.addEventListener('click', function(event) {
+//   if (event.target == document.getElementById('mod_mec')) {
+//     document.getElementById('mod_mec').style.display = "none";
+//   }
 

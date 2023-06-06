@@ -6,11 +6,13 @@
       <meta charset="utf-8" />
       <meta name="description" content="COIT20269-Assignment1" />
       <meta name="keywords" content="HTML, CSS, JavaScript" />
-      <meta name="author" content="Anuj 12189078" />
+      <meta name="author" content="12149671 12189078" />
       <meta name="format-detection" content="telephone=no" />
       <meta name="msapplication-tap-highlight" contentcordova run brpwser="no" />
       <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
-      <meta name="color-scheme" content="light dark" /><link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+      <link rel="icon" href="img/icons8-bin.svg">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/jqm.css" />
       <script src="js/jquery.js"></script>
       <script src="js/jquery.validate.js"></script>
@@ -32,9 +34,9 @@
         <div data-role="page" id="home">
      
          <div data-role="header" data-position="fixed" data-theme="b" >
-         <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
+         <a href="#"  class="menu ui-btn ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
          <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
-         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
          </div>
      
          <div data-role="content" data-theme="a" class="content">
@@ -47,6 +49,35 @@
          </div>
        </div>
        <!--  END SPA PAGE --------------------------------------------- -->
+
+       <!--  START ABOUT PAGE -------------------------------------------- -->
+  <div data-role="page" id="about">
+     
+    <div data-role="header" data-position="fixed" data-theme="b" >
+      <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
+      <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
+      <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
+      </div>
+
+      <div data-role="content" class="content">
+        <h1>Me</h1>
+        <div id="img"><img src="./img/female.png"></div>
+        <div id="img" class="more-about-me"> More About Me</div>
+        <div id="about-me">
+          <p>Hi! I am Rija Yousuf. I am a current student of CQ University , doing my masters in Information Technology with sofftware development major.
+             I have been freelancing as a front-end developer for the last three years and want to get into the field of Full Stack Developer after my graduation
+             I have created this website to give you a better idea of my work so far and get a sense of who I am as a developer.
+            <br>
+            Best wishes, <br>
+            RJY
+            </p>
+        </div>
+      </div>
+      <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
+        <h1> &copy; 2023</h1>
+      </div>
+  </div>
+  <!--  END ABOUT PAGE --------------------------------------------- -->
      
        <!--  START CONTACT PAGE --------------------------------------------- -->
        <div data-role="page" id="contact">
@@ -54,7 +85,7 @@
          <div data-role="header" data-position="fixed" data-theme="b" >
            <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
            <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
-           <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+           <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
            </div>
      
            <div data-role="content" data-theme="a" >
@@ -72,7 +103,7 @@
              <label for="message">Message</label>
              <input type="text" name="message" id="message" placeholder="Message" value="">
            </div>
-            <button type="submit">Submit</button>
+            <button class="form-button" type="submit">Submit</button>
       
           </form>
             </div>
@@ -89,12 +120,12 @@
      <div data-role="page" id="complaint-form">
      
        <div data-role="header" data-position="fixed" data-theme="b" >
-         <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">Menu</a>
+         <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
          <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
-         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
          </div>
       
-       <div data-role="content" data-theme="a" >
+       <div data-role="content" data-theme="" >
            <h1>Report Complaints</h1>
          <form action="javascript:processValidForm(this)" name="myForm" id="myForm" >
            <div class="ui-field-contain">
@@ -106,13 +137,13 @@
              <input type="email" name="email" id="email" placeholder="Email" value="" required>
            </div>
            <div class="ui-field-contain">
-             <label for="number">Phone number</label>
-             <input name="number" id="number" placeholder="Phone Name" value="" required>
+             <label for="phone">Phone number</label>
+             <input type="tel" id="phone" name="phone" placeholder="042-999-5664" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
            </div>
-           <div class="ui-field-contain">
+           <div class="">
             <label for="number">Complaint Type</label>
              <input type="radio" id="illegal_dumping" name="complaint_type" value="illegal_dumping">
-             <label for="illegal_dumping">Illegal Dumping</label>
+             <label for="illegal_dumping">Illegal Dumping</label> 
              <input type="radio" id="path_holes" name="complaint_type" value="path_holes">
              <label for="path_holes">Path Holes</label>
              <input type="radio" id="ineffective_street_light" name="complaint_type" value="ineffective_street_light">
@@ -122,8 +153,8 @@
             <label for="description">Description</label>
             <input type="text" name="description" id="description" placeholder="Description" value="" required>
           </div>
-           <button type="submit">Submit</button>
-           <button type="reset">Clear</button>
+           <button class="form-button" type="submit">Submit</button>
+           <button class="form-button" id="clearForm" type="reset">Clear</button>
      
          </form>
            </div>
@@ -139,9 +170,9 @@
       <div data-role="page" id="complaint-display">
           
        <div data-role="header" data-position="fixed" data-theme="b" >
-         <a href="#"  class="menu ui-btn ui-icon-bars">Menu</a> 
+        <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
          <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
-         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
          </div>
      
          <div data-role="content" data-theme="a" class="content">
@@ -161,9 +192,9 @@
      <div data-role="page" id="registration">
           
        <div data-role="header" data-position="fixed" data-theme="b" >
-         <a href="#"  class="menu ui-btn ui-icon-bars">Menu</a> 
+        <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
          <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
-         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/favicon-16x16.png"/></a>
+         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
          </div>
      
          <div data-role="content" data-theme="a" >
@@ -186,7 +217,10 @@
           <label for="pwd">Confirm Password</label>
           <input type="password" id="pwd" name="pwd" minlength="8" required>
         </div>
-          <button type="submit">Submit</button>
+          <button class="form-button" type="submit">Submit</button>
+          <br>
+          <hr>
+          <p>Already got an account? <a id="showLogin">Login</a> here</p>
     
         </form>
           </div>
@@ -201,13 +235,14 @@
        <div data-role="panel" id="menuPanel" data-position-fixed="true" data-position="left" data-theme="b" data-display="overlay">
      
          <div class="panel-content">
-           <a id="homeLink"><img src="img/logo.png"/></a>
+           <a id="homeLink"><img src="img/icons8-bin.svg"/></a>
      
           <ul data-role="listview" id="menuListview" >
             <li data-icon="grid"> <a href="#home">Home</a></li>
+            <li data-icon="grid"> <a href="#about">About Us</a></li>
+            <li data-icon="grid"> <a href="#contact">Contact Us</a></li>
             <li data-icon="grid"> <a href="#complaint-form">Report Complaints</a></li>
             <li data-icon="grid"> <a href="#complaint-display">View Complaints</a></li>
-            <li data-icon="grid"> <a href="#contact">Contact Us</a></li>
             <li data-icon="grid"> <a href="#registration">Register</a></li>
          </ul>
      
@@ -215,16 +250,25 @@
      
        </div><!-- /defaultpanel -->
      <!-- Menu Panel  -->
-     
-     <!---POP UP MODAL -->
-<div>
-  <div class="popup" popup-name="popup-1">
-      <div class="popup-content">
-      <h2 id="popup-text"></h2>
-  <a class="close-button" popup-close="popup-1" href="javascript:void(0)">x</a>
+
+<!--Creates the popup body-->
+<div class="popup-overlay">
+  <!--Creates the popup content-->
+   <div class="popup-content">
+      <!--popup's close button-->
+      <button class="close"><i style="font-size:28px" class="fa cross_icon">&#xf00d;</i></button>    
+    <div data-role="content" data-theme="a" >
+      <h1>Login Form</h1>
+    <form action="javascript:processValidForm(this)" name="loginForm" id="loginForm" >
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Email" value="" required>
+      <label for="pwd">Password</label>
+      <input type="password" id="pwd" name="pwd" placeholder="Password" minlength="8" required>
+      <button class="login_button" type="submit">Submit</button>
+    </form>
       </div>
-  </div>  
-</div>
+  </div>
+  </div>
       
      </body>
 </html>
