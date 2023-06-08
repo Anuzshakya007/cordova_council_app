@@ -1,4 +1,8 @@
 
+const baseURL = 'http://localhost:';
+
+const port ="3000";
+
 $(document).ready(function() {
 	
 	$("#menuPanel").panel();
@@ -53,10 +57,10 @@ $(document).on('pagecreate', '#home', function(event) {
 
 // ------END MENU ----------
 
-// Function to handle form submission
-function registerUser(event) {
-  event.preventDefault(); // Prevent form submission
-console.log("submit clicked");
+// Function to handle registration form submission
+$("#registration_submit_button").on("click", (e) => {  
+  e.preventDefault(); // Prevent form submission
+  console.log("submit clicked");
   // Get the user input from the registration form
   const fullName = document.getElementById('fullName').value;
   const email = document.getElementById('email').value;
@@ -71,41 +75,60 @@ console.log("submit clicked");
 
   // Create an object with the user data
   const userData = {
-    fullName,
-    email,
-    password
+    fullName: fullName,
+    email: email,
+    password: password
   };
 
-  // Send the user data to the API
-  fetch('http://localhost:3000/api/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userData)
-  })
-    .then(response => response.json())
-    .then(result => {
-      // Process the API response
-      console.log(result);
-
+  $.ajax({
+    method: "POST",
+    contentType: "application/json; charset=utf-8", // important
+    dataType : "json",
+    url:  baseURL+ port +"/api/users", 
+    data: JSON.stringify(userData)
+    }).done(function( data, statusText, xhrObj) {
+      console.log(JSON.stringify(userData));
       // Display a success message to the user or redirect to another page
       alert('Registration successful!');
       // Reset the form
-      document.getElementById('myForm').reset();
-    })
-    .catch(error => {
-      // Handle any errors
-      console.error('Error:', error);
+      document.getElementById('registration_form').reset();
+      $.mobile.pageContainer.pagecontainer("change", "#home", { "transition":"turn"  }); 
+    }).error (function( xhr ) {
+      console.error('Error:', xhr);
       alert('Registration failed. Please try again.');
-    });
-}
+    }) // end ajax
 
-// Event listener to handle form submission
-document.getElementById('myForm').addEventListener('submit', registerUser);
+});
 
-// Function to handle form submission
-function addComplaint(event) {
+//login function
+$("#login_submit_button").on("click", (e) => {  
+  e.preventDefault(); // Prevent form submission
+  console.log("submit clicked");
+  // Get the user input from the registration form
+  const email = document.getElementById('login_email').value;
+  const password = document.getElementById('loginPass').value;
+
+  $.ajax({
+    method: "POST",
+    headers: {  
+      Authorization: `Bearer ${token}` //Add this line
+   },
+    contentType: "application/json; charset=utf-8", // important
+    dataType : "json",
+    url:  baseURL+ port +"/api/login", 
+    data: JSON.stringify({ username: email, password })
+    }).done(function( data, statusText, xhrObj) {
+      // Reset the form
+      document.getElementById('login_form').reset();
+      $.mobile.pageContainer.pagecontainer("change", "#complaint-form", { "transition":"turn"  }); 
+    }).error (function( xhr ) {
+      console.error('Error:', xhr);
+      document.getElementById('login_error').innerHTML = 'Invalid credentials';
+    }) // end ajax
+});
+
+//complaint form submit function
+$("#complaint_submit_button").on("click", (e) => {  
   event.preventDefault(); // Prevent form submission
 
   // Get the user input from the complaint form
@@ -124,33 +147,57 @@ function addComplaint(event) {
     description: description
   };
 
-  // Send the complaint data to the API
-  fetch('http:/localhost:3000/api/form', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(complaintData)
-  })
-    .then(response => response.json())
-    .then(result => {
-      // Process the API response
-      console.log(result);
 
-      // Display a success message to the user or redirect to another page
-      alert('Complaint submitted successfully!');
+  $.ajax({
+    method: "POST",
+    contentType: "application/json; charset=utf-8", // important
+    dataType : "json",
+    url:  baseURL+ port +"/api/form/:id", 
+    data: JSON.stringify(complaintData)
+    }).done(function( data, statusText, xhrObj) {
       // Reset the form
-      document.getElementById('myForm').reset();
-    })
-    .catch(error => {
-      // Handle any errors
-      console.error('Error:', error);
+      document.getElementById('comlaintForm').reset();
+      alert('Complaint submitted successfully!');
+      $.mobile.pageContainer.pagecontainer("change", "#complaint-form", { "transition":"turn"  }); 
+    }).error (function( xhr ) {
+      console.error('Error:', xhr);
       alert('Complaint submission failed. Please try again.');
-    });
-}
+    }) // end ajax
 
-// Event listener to handle form submission
-document.getElementById('myForm').addEventListener('submit', addComplaint);
+});
+
+
+// // Function to handle form submission
+// function addComplaint(event) {
+
+
+//   // Send the complaint data to the API
+//   fetch('http:/localhost:3000/api/form', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(complaintData)
+//   })
+//     .then(response => response.json())
+//     .then(result => {
+//       // Process the API response
+//       console.log(result);
+
+//       // Display a success message to the user or redirect to another page
+//       alert('Complaint submitted successfully!');
+//       // Reset the form
+//       document.getElementById('myForm').reset();
+//     })
+//     .catch(error => {
+//       // Handle any errors
+//       console.error('Error:', error);
+//       alert('Complaint submission failed. Please try again.');
+//     });
+// }
+
+// // Event listener to handle form submission
+// document.getElementById('myForm').addEventListener('submit', addComplaint);
 
 // Fetch the complaint list from the server
 fetch('http://localhost:3000/api/form')
@@ -166,33 +213,6 @@ fetch('http://localhost:3000/api/form')
 .catch(error => {
   console.error('Error fetching complaint list:', error);
 });
-
-//login function
-function login(form) {
-  const email = form.email.value;
-  const password = form.pwd.value;
-
-  fetch('/api/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ username: email, password })
-  })
-    .then(response => {
-      if (response.ok) {
-        // Login successful, redirect to the home page
-        window.location.href = '#home';
-      } else {
-        // Login failed, display error message
-        alert('Invalid credentials');
-      }
-    })
-    .catch(error => {
-      console.error('Error logging in:', error);
-      alert('An error occurred');
-    });
-}
 
         $(`#displayApiData`).click(function (){
              fetchData();

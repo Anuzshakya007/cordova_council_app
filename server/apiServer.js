@@ -1,11 +1,21 @@
 const express = require('express');
 const multer = require('multer')
+var cors = require('cors')
 const { client,connect, getDB } = require('./db');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
+
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -76,12 +86,12 @@ app.post('/api/form', upload.single('image'), async (req, res) => {
       const { fullname, email, address, contactNumber, description, complaints } = req.body;
   
       const newForm = {
-        fullname,
-        email,
-        address,
-        contactNumber,
-        description,
-        complaints,
+        fullname: fullname,
+        email: email,
+        address: address,
+        contactNumber: contactNumber,
+        description: contactNumber,
+        complaints: complaints,
         image: req.file.filename, // Save the filename of the uploaded image
       };
   
