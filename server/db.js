@@ -21,6 +21,7 @@ function getDB() {
 }
 
 module.exports = {
+  client,
   connect,
   getDB,
 };

@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer')
-const { connect, getDB } = require('./db');
+const { client,connect, getDB } = require('./db');
 
 const app = express();
 const port = 3000;
@@ -22,7 +22,8 @@ const storage = multer.diskStorage({
 // register user
 app.post('/api/users', async (req, res) => {
     try {
-      await client.connect();
+      await connect();
+     const db = getDB();
     //   const db = client.db('councildb');
       const collection = db.collection('users');
       
@@ -41,7 +42,8 @@ app.post('/api/users', async (req, res) => {
   // Login endpoint
 app.post('/api/login', async (req, res) => {
     try {
-      await client.connect();
+      await connect();
+      const db = getDB();
     //   const db = client.db('councildb');
       const collection = db.collection('users');
       
@@ -66,7 +68,8 @@ app.post('/api/login', async (req, res) => {
   // API endpoint for handling form data
 app.post('/api/form', upload.single('image'), async (req, res) => {
     try {
-      await client.connect();
+      await connect();
+      const db = getDB();
     //   const db = client.db('councildb');
       const collection = db.collection('forms');
   
@@ -96,7 +99,8 @@ app.post('/api/form', upload.single('image'), async (req, res) => {
   // Edit a form entry
 app.put('/api/form/:id', upload.single('image'), async (req, res) => {
     try {
-      await client.connect();
+      await connect();
+      const db = getDB();
     //   const db = client.db('councildb');
       const collection = db.collection('forms');
       
@@ -136,6 +140,7 @@ app.get('/api/form', async (req, res) => {
     try {
       await client.connect();
     //   const db = client.db('councildb');
+    const db = getDB();
       const collection = db.collection('forms');
       
       const forms = await collection.find().toArray();
