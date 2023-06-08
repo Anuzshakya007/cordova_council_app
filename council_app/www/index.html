@@ -127,7 +127,7 @@
       
        <div data-role="content" data-theme="" >
            <h1>Report Complaints</h1>
-         <form action="javascript:processValidForm(this)" name="myForm" id="myForm" >
+         <form action="javascript:addComplaint(this)" name="myForm" id="myForm" >
            <div class="ui-field-contain">
              <label for="fullName">Full name</label>
              <input type="text" name="fullName" id="fullName" placeholder="Full Name" value="" required>
@@ -168,24 +168,21 @@
      
       <!--  START VIEW COMPLAINT PAGE --------------------------------------------- -->
       <div data-role="page" id="complaint-display">
-          
-       <div data-role="header" data-position="fixed" data-theme="b" >
-        <a href="#"  class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
-         <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a> </h1>
-         <a id="logo" href="#about"  class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
-         </div>
-     
-         <div data-role="content" data-theme="a" class="content">
-           <h1>Complaints</h1>
-           <br>
-           <div id="listofItems"></div>
-           <br><br>
-         </div>
-     
-       <div  data-role="footer" class="ui-bar"  data-position="fixed"   data-theme="b"  >
-         <h1> &copy; 2023</h1>
-       </div>
-     </div>
+        <div data-role="header" data-position="fixed" data-theme="b">
+          <a href="#" class="menu ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars"></a>
+          <h1 id="title" class="project"><a href="#home">COIT20269 - Assignment 3</a></h1>
+          <a id="logo" href="#about" class="menu ui-btn-right"><img src="img/icons8-bin.svg"/></a>
+        </div>
+        <div data-role="content" data-theme="a" class="content">
+          <h1>Complaints</h1>
+          <br>
+          <div id="listOfItems"></div>
+          <br><br>
+        </div>
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+          <h1>&copy; 2023</h1>
+        </div>
+      </div>
      <!--  END SPA PAGE --------------------------------------------- -->
      
      <!--  START REGISTRATION PAGE --------------------------------------------- -->
@@ -199,7 +196,7 @@
      
          <div data-role="content" data-theme="a" >
           <h1>Registration Form</h1>
-        <form action="javascript:processValidForm(this)" name="myForm" id="myForm" >
+        <form action="javascript:registerUser(this)" name="myForm" id="myForm" >
           <div class="ui-field-contain">
             <label for="fullName">Full name</label>
             <input type="text" name="fullName" id="fullName" placeholder="Full Name" value="" required>
@@ -215,7 +212,7 @@
          </div>
          <div class="ui-field-contain">
           <label for="pwd">Confirm Password</label>
-          <input type="password" id="pwd" name="pwd" minlength="8" required>
+          <input type="password" id="confirm_pwd" name="pwd" minlength="8" required>
         </div>
           <button class="form-button" type="submit">Submit</button>
           <br>
@@ -253,22 +250,20 @@
 
 <!--Creates the popup body-->
 <div class="popup-overlay">
-  <!--Creates the popup content-->
-   <div class="popup-content">
-      <!--popup's close button-->
-      <button class="close"><i style="font-size:28px" class="fa cross_icon">&#xf00d;</i></button>    
-    <div data-role="content" data-theme="a" >
+  <div class="popup-content">
+    <button class="close"><i style="font-size:28px" class="fa cross_icon">&#xf00d;</i></button>    
+    <div data-role="content" data-theme="a">
       <h1>Login Form</h1>
-    <form action="javascript:processValidForm(this)" name="loginForm" id="loginForm" >
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" placeholder="Email" value="" required>
-      <label for="pwd">Password</label>
-      <input type="password" id="pwd" name="pwd" placeholder="Password" minlength="8" required>
-      <button class="login_button" type="submit">Submit</button>
-    </form>
-      </div>
+      <form action="javascript:login(this)" name="loginForm" id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" value="" required>
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" name="pwd" placeholder="Password" minlength="8" required>
+        <button class="login_button" type="submit">Submit</button>
+      </form>
+    </div>
   </div>
-  </div>
+</div>
       
      </body>
 </html>
